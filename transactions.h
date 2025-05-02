@@ -20,7 +20,7 @@ private:
 
 public:
 
-    Transactions(Account* src, Account* dest, double amount, double fee);
+    Transactions(Account* src, Account* dest, double amount);
     ~Transactions();
 
     bool execute();

@@ -19,8 +19,8 @@ int main() {
     std::cout << "Ana: $" << acc1.getBalance() << "\n";
     std::cout << "Vasile: $" << acc2.getBalance() << "\n\n";
 
-    // Create a transaction (3% fee)
-    Transactions transfer(&acc1, &acc2, 200.0, 3.0);  // Needs error handling 
+    // Create a transaction (3% fee is standard)
+    Transactions transfer(&acc1, &acc2, 200.0);  // fee is set based the type of acc 
 
     // Execute and check result
     std::cout << "Executing transfer...\n";
