@@ -16,7 +16,7 @@ private:
     double m_amount;
     double m_fee;
     std::chrono::system_clock::time_point m_timestamp;
-    int m_transaction_id;
+    static int m_transaction_id;
 
 public:
 

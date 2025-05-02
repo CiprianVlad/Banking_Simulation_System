@@ -7,14 +7,15 @@
 #include "C:/Users/Ciprian/OneDrive - unibuc.ro/Desktop/facultate/Anul I sem II/POO/proiect/bank.h"
 #include "C:/Users/Ciprian/OneDrive - unibuc.ro/Desktop/facultate/Anul I sem II/POO/proiect/transactions.h"
 
-class Account;
+int Transactions::m_transaction_id = 0;
 
 Transactions::Transactions(Account* src, Account* dest, double amount, double fee)
-    : m_sourceAcc(src), m_destAcc(dest), m_amount(amount), m_fee(fee), m_transaction_id(0) {
-} // m_transaction_id should be used to identify the transaction, but it's not implemented in this code.
+    : m_sourceAcc(src), m_destAcc(dest), m_amount(amount), m_fee(3){
+    m_transaction_id++; 
+} 
 
 
-Transactions::~Transactions() {} // Sa stiu ca e acolo 
+Transactions::~Transactions() {} // Scris sa nu fie lasat implicit 
 
 
 bool Transactions::execute() {
