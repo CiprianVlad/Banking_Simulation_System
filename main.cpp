@@ -4,9 +4,6 @@
 #include "account.h"
 #include "bank.h"
 #include "transactions.h"
-#include "savings_acc.h"
-#include "student_acc.h"
-#include "adult_acc.h"
 
 // Main function
 int main() {

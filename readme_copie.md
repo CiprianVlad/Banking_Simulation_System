@@ -12,6 +12,6 @@ Key difference between child, student, adult acc va fi comisionul pe care il pla
 when you withdraw money from said account. \ 
 Also in contul de investitii cand investesti in x companie iti ia taxa ca in real life. 
 
-Workflow : clone pe master la main_project ; Implementez investing_acc.h si .cpp + 
+Workflow : clone pe master la main_project ; Implementez investing_acc.h si .cpp + child_acc.h si .cpp 
 In investing_acc.h (am 10 stockuri in care cineva poate investii) 
 In .cpp implementez algoritmica pentru investit 
