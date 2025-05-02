@@ -1,4 +1,4 @@
-// This file contains the 'main' function. Program execution begins and ends here.
+// Program execution begins and ends here.
 
 #include <iostream>
 #include "account.h"
@@ -8,7 +8,7 @@
 #include "student_acc.h"
 #include "adult_acc.h"
 
-// Main function to demonstrate the banking simulation system
+// Main function
 int main() {
     // Create accounts
     Account acc1("Ana", 1000.0);  // Account holder "Ana" with $1000

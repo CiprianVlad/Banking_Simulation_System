@@ -3,9 +3,8 @@
 #include <iomanip>
 #include <chrono>
 #include <ctime>
-#include "C:/Users/Ciprian/OneDrive - unibuc.ro/Desktop/facultate/Anul I sem II/POO/proiect/account.h"
-#include "C:/Users/Ciprian/OneDrive - unibuc.ro/Desktop/facultate/Anul I sem II/POO/proiect/bank.h"
-#include "C:/Users/Ciprian/OneDrive - unibuc.ro/Desktop/facultate/Anul I sem II/POO/proiect/transactions.h"
+#include "account.h"
+#include "transactions.h"
 
 int Transactions::m_transaction_id = 0;
 
