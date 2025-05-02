@@ -16,11 +16,11 @@ private:
     double m_amount;
     double m_fee;
     std::chrono::system_clock::time_point m_timestamp;
-    int m_transaction_id;
+    static int m_transaction_id;
 
 public:
 
-    Transactions(Account* src, Account* dest, double amount, double fee);
+    Transactions(Account* src, Account* dest, double amount, double fee = 3);
     ~Transactions();
 
     bool execute();

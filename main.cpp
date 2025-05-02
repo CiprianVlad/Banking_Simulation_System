@@ -4,9 +4,6 @@
 #include "account.h"
 #include "bank.h"
 #include "transactions.h"
-#include "savings_acc.h"
-#include "student_acc.h"
-#include "adult_acc.h"
 
 // Main function to demonstrate the banking simulation system
 int main() {
@@ -20,7 +17,7 @@ int main() {
     std::cout << "Vasile: $" << acc2.getBalance() << "\n\n";
 
     // Create a transaction (3% fee)
-    Transactions transfer(&acc1, &acc2, 200.0, 3.0);  // Needs error handling 
+    Transactions transfer(&acc1, &acc2, 200.0);  // Needs error handling 
 
     // Execute and check result
     std::cout << "Executing transfer...\n";
