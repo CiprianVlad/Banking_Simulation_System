@@ -4,24 +4,14 @@
 #include <chrono>
 #include <ctime>
 #include "account.h"
-<<<<<<< HEAD
 #include "transactions.h"
-
-int Transactions::m_transaction_id = 0;
-
-Transactions::Transactions(Account* src, Account* dest, double amount, double fee)
-    : m_sourceAcc(src), m_destAcc(dest), m_amount(amount), m_fee(3){
-    m_transaction_id++; 
-=======
 #include "bank.h"
-#include "transactions.h"
 
 int Transactions::m_transaction_id = 0; 
 
 Transactions::Transactions(Account* src, Account* dest, double amount, double fee)
     : m_sourceAcc(src), m_destAcc(dest), m_amount(amount), m_fee(fee) {
     m_transaction_id++;
->>>>>>> test
 } 
 
 
