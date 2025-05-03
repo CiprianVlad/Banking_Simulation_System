@@ -11,8 +11,8 @@
 class Savings_Acc : public Account {
 
 private:
-	double interest_rate; // interest rate for savings account
-	std::chrono::system_clock::time_point last_deposit_time; // the last time of deposit 
+	double m_interest_rate; // interest rate for savings account
+	std::chrono::system_clock::time_point m_last_deposit_time; // the last time of deposit 
 public:
 	// Constructor 
 	Savings_Acc(const std::string& holder, double initialBalance, double rate = 3.0);

@@ -92,8 +92,11 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+<<<<<<< HEAD
       <EntryPointSymbol>
       </EntryPointSymbol>
+=======
+>>>>>>> test
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -126,6 +129,7 @@
     <ClCompile Include="account.cpp" />
     <ClCompile Include="adult_acc.cpp" />
     <ClCompile Include="bank.cpp" />
+    <ClCompile Include="child_acc.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="savings_acc.cpp" />
     <ClCompile Include="student_acc.cpp" />
@@ -135,6 +139,7 @@
     <ClInclude Include="account.h" />
     <ClInclude Include="adult_acc.h" />
     <ClInclude Include="bank.h" />
+    <ClInclude Include="child_acc.h" />
     <ClInclude Include="savings_acc.h" />
     <ClInclude Include="student_acc.h" />
     <ClInclude Include="transactions.h" />

@@ -5,8 +5,8 @@
 
 // Constructor
 Savings_Acc::Savings_Acc(const std::string& holder, double initialBalance, double rate)
-    : Account(holder, initialBalance), interest_rate(rate) {
-    last_deposit_time = std::chrono::system_clock::now(); // Initialize the deposit timestamp
+    : Account(holder, initialBalance), m_interest_rate(rate) {
+    m_last_deposit_time = std::chrono::system_clock::now(); // Initialize the deposit timestamp
 }
 
 // Destructor
@@ -19,7 +19,7 @@ Savings_Acc::~Savings_Acc() {
 void Savings_Acc::deposit(double amount) {
     if (amount > 0) {
         balance += amount;
-        last_deposit_time = std::chrono::system_clock::now(); // Update the deposit timestamp
+        m_last_deposit_time = std::chrono::system_clock::now(); // Update the deposit timestamp
     }
     else {
         std::cout << "Invalid deposit amount.\n";
@@ -29,13 +29,13 @@ void Savings_Acc::deposit(double amount) {
 // Calculate and apply interest
 void Savings_Acc::applyInterest() {
     auto now = std::chrono::system_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(now - last_deposit_time);
+    auto duration = std::chrono::duration_cast<std::chrono::seconds>(now - m_last_deposit_time);
     // Need to test this 
 
     if (duration.count() >= 6) { // Check if 6 months have passed
-        double interest = balance * (interest_rate / 100.0); // Calculate interest
+        double interest = balance * (m_interest_rate / 100.0); // Calculate interest
         balance += interest; // Apply interest
-        last_deposit_time = now; // Reset the deposit timestamp
+        m_last_deposit_time = now; // Reset the deposit timestamp
         std::cout << "Interest of $" << std::fixed << std::setprecision(2) << interest
             << " applied to the account.\n";
     }
@@ -47,5 +47,5 @@ void Savings_Acc::applyInterest() {
 // Override displayDetails for interest rate
 void Savings_Acc::displayDetails() const {
     Account::displayDetails(); // Call base class method
-    std::cout << "Interest Rate: " << interest_rate << "%\n";
+    std::cout << "Interest Rate: " << m_interest_rate << "%\n";
 }

@@ -5,7 +5,7 @@
 
 // Constructor
 Student_Acc::Student_Acc(const std::string& holder, double initialBalance, double rate)
-    : Account(holder, initialBalance), interest_rate(rate) {
+    : Account(holder, initialBalance), m_interest_rate(rate) {
     last_deposit_time = std::chrono::system_clock::now(); // Initialize the deposit timestamp
 }
 
@@ -30,10 +30,9 @@ void Student_Acc::deposit(double amount) {
 void Student_Acc::applyInterest() {
     auto now = std::chrono::system_clock::now();
     auto duration = std::chrono::duration_cast<std::chrono::seconds>(now - last_deposit_time);
-    // Need to test this 
 
     if (duration.count() >= 6) { // Check if 6 months have passed
-        double interest = balance * (interest_rate / 100.0); // Calculate interest
+        double interest = balance * (m_interest_rate / 100.0); // Calculate interest
         balance += interest; // Apply interest
         last_deposit_time = now; // Reset the deposit timestamp
         std::cout << "Interest of $" << std::fixed << std::setprecision(2) << interest
@@ -47,5 +46,5 @@ void Student_Acc::applyInterest() {
 // Override displayDetails for interest rate
 void Student_Acc::displayDetails() const {
     Account::displayDetails(); // Call base class method
-    std::cout << "Interest Rate for an adult account: " << interest_rate << "%\n";
+    std::cout << "Interest Rate for an adult account: " << m_interest_rate << "%\n";
 }

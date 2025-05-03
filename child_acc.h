@@ -1,24 +1,24 @@
-#ifndef STUDENT_ACCOUNT_H
-#define STUDENT_ACCOUNT_H
+#ifndef CHILD_ACOOUNT_H
+#define CHILD_ACOOUNT_H
 
-#include "account.h" // include the base class header
+#include "account.h" // base header 
 #include <iostream>
 #include <string>
 #include <vector>
 #include <ctime>
 #include <chrono>
 
-class Student_Acc : public Account {
+class Child_Acc : public Account {
 
 private:
 	double m_interest_rate; // interest rate for savings account
-	std::chrono::system_clock::time_point last_deposit_time; // the last time of deposit 
+	std::chrono::system_clock::time_point m_last_deposit_time; // the last time of deposit 
 public:
 	// Constructor 
-	Student_Acc(const std::string& holder, double initialBalance, double rate = 1.0);
+	Child_Acc(const std::string& holder, double initialBalance, double rate = 0.0); 
 
 	// Destructor
-	~Student_Acc();
+	~Child_Acc();
 
 	// override deposit to track the timestamp
 	void deposit(double amount) override;
@@ -28,12 +28,5 @@ public:
 
 	// display account details
 	void displayDetails() const override;
-
-	// Getter for Interest Rate
-	double getInterestRate() const{
-		return m_interest_rate;
-	}
 };
-
-
 #endif
