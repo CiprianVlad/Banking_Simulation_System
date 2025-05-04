@@ -39,6 +39,9 @@
     <ClCompile Include="child_acc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="investing_acc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="account.h">
@@ -60,6 +63,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="child_acc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="investing_acc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

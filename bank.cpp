@@ -10,7 +10,7 @@ Bank::Bank(const std::string& bankName, const std::string& bankAddress)
 }
 
 Bank::~Bank() {
-    for (Account* account : m_accounts) { // That's how you loop from objects 
+    for (Account* account : m_accounts) { // Looping through m_accounts 
         delete account;
     }
 }

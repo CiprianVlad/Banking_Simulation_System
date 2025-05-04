@@ -4,34 +4,27 @@
 #include "account.h"
 #include "bank.h"
 #include "transactions.h"
+#include "investing_acc.h"
 
-// Main function
 int main() {
-    // Create accounts
-    Account acc1("Ana", 1000.0);  // Account holder "Ana" with $1000
-    Account acc2("Vasile", 500.0);     // Account holder "Vasile" with $500
+    // Initialize stocks
+    std::vector<Stock> initialStocks = {
+        {"TechCorp", 150.0},
+        {"HealthInc", 200.0},
+        {"AutoMakers", 120.0}
+    };
 
-    // Display initial balances
-    std::cout << "Initial balances:\n";
-    std::cout << "Ana: $" << acc1.getBalance() << "\n";
-    std::cout << "Vasile: $" << acc2.getBalance() << "\n\n";
+    // Create an investment account
+    Invest_acc investAccount("John Doe", 1000.0, initialStocks);
 
-    // Create a transaction (3% fee)
-    Transactions transfer(&acc1, &acc2, 200.0);  // Needs error handling 
+    // Display initial details
+    investAccount.displayDetails();
 
-    // Execute and check result
-    std::cout << "Executing transfer...\n";
-    if (transfer.execute()) {
-        std::cout << "Transfer succeeded!\n";
+    // Apply stock changes over iterations (1 iteration could be considered 1 month) 
+    for (int i = 0; i < 5; ++i) {
+        investAccount.applyStockDifference();
+        investAccount.displayDetails();
     }
-    else {
-        std::cout << "Transfer failed (insufficient funds or invalid accounts).\n";
-    }
-
-    // Display final balances
-    std::cout << "\nFinal balances:\n";
-    acc1.displayDetails();
-    // std::cout << "Vasile: $" << acc2.getBalance() << "\n";
 
     return 0;
 }

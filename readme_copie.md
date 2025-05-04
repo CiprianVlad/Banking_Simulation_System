@@ -14,6 +14,6 @@ Also in contul de investitii cand investesti in x companie iti ia taxa ca in rea
 
 Workflow : clone pe master la main_project \ 
 Implementez investing_acc.h si .cpp + child_acc.h si .cpp \
-Modify ApplyInterest so it only is in savings_acc.h / cpp \  
-In investing_acc.h (am 10 stockuri in care cineva poate investii)
+Modify ApplyInterest based on the rate in savings_acc.h si .cpp \  
+In investing_acc.h (am 10 stockuri in care cineva poate investii) \
 In .cpp implementez algoritmica pentru investit 

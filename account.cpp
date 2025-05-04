@@ -5,7 +5,7 @@
 
 int Account::accountCount = 0;
 
-Account::Account(const std::string& holder, double initialBalance) // Ai grija sa fie acceeasi parametrii 
+Account::Account(const std::string& holder, double initialBalance) // Sa fie aceeasi parametrii 
     : account_holder(holder), balance(initialBalance) {
     account_number = generateAccountNumber();
     accountCount++;
@@ -14,7 +14,7 @@ Account::Account(const std::string& holder, double initialBalance) // Ai grija s
 Account::~Account() {
     /*
     * Not sure if this is right yet, needs some testing
-    accountCount--;
+    accountCount--; // Case pentru sters contul 
     std::cout << "Account " << account_number << " closed.\n";
     */
 }
