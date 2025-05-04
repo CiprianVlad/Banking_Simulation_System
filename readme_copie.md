@@ -17,3 +17,4 @@ Implementez investing_acc.h si .cpp + child_acc.h si .cpp \
 Modify ApplyInterest based on the rate in savings_acc.h si .cpp \  
 In investing_acc.h (am 10 stockuri in care cineva poate investii) \
 In .cpp implementez algoritmica pentru investit 
++ Implementat stock.cpp + stock.h 

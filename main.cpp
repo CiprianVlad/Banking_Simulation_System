@@ -15,15 +15,16 @@ int main() {
     };
 
     // Create an investment account
-    Invest_acc investAccount("John Doe", 1000.0, initialStocks);
+    Invest_acc investAccount("John Doe", 1000.0, initialStocks); // numarul de stocuri + suma investita  
 
     // Display initial details
     investAccount.displayDetails();
 
     // Apply stock changes over iterations (1 iteration could be considered 1 month) 
-    for (int i = 0; i < 5; ++i) {
+    for (int i = 0; i < 3; ++i) {
         investAccount.applyStockDifference();
         investAccount.displayDetails();
+        std::cout << "\n";
     }
 
     return 0;

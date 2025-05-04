@@ -31,6 +31,9 @@ public:
 	// override deposit to track the timestamp
 	void deposit(double amount) override;
 
+	// Allow user to choose the stocks they want to invest in 
+	void selectStocks();
+
 	// apply interest to the balance
 	void applyStockDifference();
 

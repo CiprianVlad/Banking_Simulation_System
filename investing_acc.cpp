@@ -2,7 +2,7 @@
 
 // Constructor
 Invest_acc::Invest_acc(const std::string& holder, double initialBalance, const std::vector<Stock>& initialStocks)
-	: Account(holder, initialBalance), stocks(initialStocks), distribution(-3.0, 3.0) {
+	: Account(holder, initialBalance), stocks(initialStocks), distribution(-0.2, 0.2) {
 	generator.seed(std::chrono::system_clock::now().time_since_epoch().count());
 }
 
