@@ -1,4 +1,5 @@
 #include "investing_acc.h"
+#include "stock.h"
 
 // Constructor
 Invest_acc::Invest_acc(const std::string& holder, double initialBalance, const std::vector<Stock>& initialStocks)
@@ -27,8 +28,8 @@ void Invest_acc::applyStockDifference() {
 
 	for (auto& stock : stocks) {
 		// Randomly change the stock index 
-		double change = stock.index * distribution(generator);
-		stock.index += change; 
+		double change = stock.getCurrentIndex() * distribution(generator);
+		stock.updateIndex(stock.getCurrentIndex() + change);
 		totalChange += change; 
 	}
 	// Update the account balance 
@@ -42,6 +43,7 @@ void Invest_acc::displayDetails() const {
 	Account::displayDetails(); // the base fuctions 
 	std::cout << "Investment Account Stocks:\n";
 	for (const auto& stock : stocks) {
-		std::cout << " - " << stock.name << ": " << stock.index << "\n";
+		stock.displayDetails(); 
+		std::cout << "\n";
 	}
 }

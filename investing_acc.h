@@ -2,22 +2,15 @@
 #define INVESTING_ACC_H
 
 #include "account.h"
-#include <iostream>
-#include <string>
+#include "stock.h"
 #include <vector>
-#include <ctime>
 #include <chrono>
 #include <random>
 
-struct Stock {
-	std::string name; // name of the stock
-	double index; // 
-};
-
 class Invest_acc : public Account {
 private:
+	std::vector<Stock> stocks; // list of stocks 
 	std::chrono::system_clock::time_point m_last_deposit_time; // the last time of deposit 
-	std::vector<Stock> stocks; // array of stocks 
 	std::default_random_engine generator; // with how much is modified the stock 
 	std::uniform_real_distribution<double> distribution; // the distribution of the random changes 
 
@@ -30,9 +23,6 @@ public:
 
 	// override deposit to track the timestamp
 	void deposit(double amount) override;
-
-	// Allow user to choose the stocks they want to invest in 
-	void selectStocks();
 
 	// apply interest to the balance
 	void applyStockDifference();
