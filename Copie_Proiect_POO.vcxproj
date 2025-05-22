@@ -146,7 +146,7 @@
     <ClInclude Include="transactions.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="readme_copie.md" />
+    <None Include="readme.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,6 +1,3 @@
-#include <iostream>
-#include <string> 
-#include <vector> 
 #include <algorithm>
 #include "bank.h"
 #include "account.h"
@@ -35,7 +32,7 @@ void Bank::removeAccount(Account* account) {
     while (it != m_accounts.end()) {
         if ((*it)->getAccNumber() == account->getAccNumber()) {
             it = m_accounts.erase(it);
-            delete* it; // order matters? 
+            delete* it; 
             return;
         }
         else {

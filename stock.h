@@ -1,6 +1,7 @@
 #ifndef STOCK_H
 #define STOCK_H
 
+#include <iostream>
 #include <string>
 #include <vector>
 

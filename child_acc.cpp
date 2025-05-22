@@ -1,25 +1,21 @@
 #include "child_acc.h"
-#include <iostream>
-#include <chrono>
-#include <iomanip>
 
 // Constructor
 Child_Acc::Child_Acc(const std::string& holder, double initialBalance, double rate)
     : Account(holder, initialBalance), m_interest_rate(rate) {
-    m_last_deposit_time = std::chrono::system_clock::now(); // Initialize the deposit timestamp
+    m_last_deposit_time = std::chrono::system_clock::now(); // Initialize timestamp
 }
 
 // Destructor
 Child_Acc::~Child_Acc() {
     // Destructor
-    // No cleanup needed for now
 }
 
 // Override deposit to update the timestamp
 void Child_Acc::deposit(double amount) {
     if (amount > 0) {
         balance += amount;
-        m_last_deposit_time = std::chrono::system_clock::now(); // Update the deposit timestamp
+        m_last_deposit_time = std::chrono::system_clock::now(); // Update timestamp
     }
     else {
         std::cout << "Invalid deposit amount.\n";

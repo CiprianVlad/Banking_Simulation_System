@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 
-class Account;
+class Account; // not good practice 
 
 class Bank {
 

@@ -1,6 +1,4 @@
 #include "savings_acc.h"
-#include <iostream>
-#include <chrono>
 #include <iomanip>
 
 // Constructor
@@ -11,8 +9,6 @@ Savings_Acc::Savings_Acc(const std::string& holder, double initialBalance, doubl
 
 // Destructor
 Savings_Acc::~Savings_Acc() {
-    // Destructor
-    // No cleanup needed for now
 }
 
 // Override deposit to update the timestamp
@@ -36,7 +32,7 @@ void Savings_Acc::applyInterest() {
         double interest = balance * (m_interest_rate / 100.0); // Calculate interest
         balance += interest; // Apply interest
         m_last_deposit_time = now; // Reset the deposit timestamp
-        std::cout << "Interest of $" << std::fixed << std::setprecision(2) << interest
+        std::cout << "Interest of $" << std::fixed << std::setprecision(2) << interest // setprecision(2) = nr de cifre dupa virgula
             << " applied to the account.\n";
     }
     else {

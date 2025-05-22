@@ -1,7 +1,4 @@
 #include "student_acc.h"
-#include <iostream>
-#include <chrono>
-#include <iomanip>
 
 // Constructor
 Student_Acc::Student_Acc(const std::string& holder, double initialBalance, double rate)

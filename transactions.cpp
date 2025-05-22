@@ -1,8 +1,5 @@
-#include <iostream> 
 #include <sstream>
 #include <iomanip>
-#include <chrono>
-#include <ctime>
 #include "account.h"
 #include "transactions.h"
 #include "bank.h"
@@ -14,9 +11,7 @@ Transactions::Transactions(Account* src, Account* dest, double amount, double fe
     m_transaction_id++;
 } 
 
-
 Transactions::~Transactions() {} // Scris sa nu fie lasat implicit 
-
 
 bool Transactions::execute() {
     if (!m_sourceAcc || !m_destAcc) return false; // != nullptr

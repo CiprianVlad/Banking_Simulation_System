@@ -1,12 +1,11 @@
 #include "stock.h"
-#include <iostream>
 
-int Stock::nextId = 1; 
+int Stock::nextId = 1;
 
 // Constructor 
 Stock::Stock(const std::string& name, const std::string& category, double initialIndex, int stocksForSale)
 	: id(nextId++), name(name), category(category), currentIndex(initialIndex), stocksForSale(stocksForSale) {
-	indexHistory.push_back(initialIndex);
+    indexHistory.push_back(initialIndex);
 };
 
 // Getters

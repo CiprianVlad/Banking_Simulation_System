@@ -4,8 +4,9 @@
 #include "stock.h"
 
 int main() {
-    // Create some stocks
-    Stock stock1("TechCorp", "Technology", 150.0, 1000);
+    // al 3-lea parametru e index-ul
+    // al 4-lea e numarul de stocuri
+    Stock stock1("TechCorp", "Technology", 150.0, 1000); 
     Stock stock2("HealthInc", "Healthcare", 200.0, 500);
     Stock stock3("AutoMakers", "Automotive", 120.0, 800);
 
@@ -24,6 +25,5 @@ int main() {
         investAccount.displayDetails();
         std::cout << "\n";
     }
-
     return 0;
 }

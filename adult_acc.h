@@ -2,10 +2,6 @@
 #define ADULT_ACCOUNT_H
 
 #include "account.h" // include the base class header
-#include <iostream>
-#include <string>
-#include <vector>
-#include <ctime>
 #include <chrono>
 
 class Adult_Acc : public Account {

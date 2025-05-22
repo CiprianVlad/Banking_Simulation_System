@@ -76,6 +76,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="readme_copie.md" />
+    <None Include="readme.md" />
   </ItemGroup>
 </Project>

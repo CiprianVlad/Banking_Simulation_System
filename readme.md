@@ -1,4 +1,4 @@
-Owner : Vlad-Ciprian Constandache \
+﻿Owner : Vlad-Ciprian Constandache 
 
 Enhancements : 
 Diferenta dintre un cont de savings si unul de de adult e ca nu poti sa faci transfer de bani \
@@ -10,9 +10,8 @@ Key difference between child, student, adult acc va fi comisionul pe care il pla
 when you withdraw money from said account. \ 
 Also in contul de investitii cand investesti in x companie iti ia taxa ca in real life. 
 
-Workflow : clone pe master la main_project \ 
-Implementez investing_acc.h si .cpp + child_acc.h si .cpp \
-Modify ApplyInterest based on the rate in savings_acc.h si .cpp \  
-In investing_acc.h (am 10 stockuri in care cineva poate investii) \
-In .cpp implementez algoritmica pentru investit \ 
-+ Implementat stock.cpp + stock.h // numar stocuri + detalii + grafic + maybe angajati 
+Workflow :
+Fuctia pentru applyInterest in clasa banca \
+Supraincarcare de plus si afisare \
+Fac Cont clasa abstracta | interfața \ 
++ Implementat stock.cpp + stock.h : numar stocuri + detalii + grafic + maybe angajati 

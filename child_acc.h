@@ -2,11 +2,8 @@
 #define CHILD_ACOOUNT_H
 
 #include "account.h" // base header 
-#include <iostream>
-#include <string>
-#include <vector>
-#include <ctime>
 #include <chrono>
+#include <iomanip>
 
 class Child_Acc : public Account {
 

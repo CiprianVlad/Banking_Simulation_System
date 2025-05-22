@@ -5,7 +5,7 @@
 #include <chrono>
 #include <ctime>
 
-class Account;
+class Account; // not good practice 
 
 class Transactions {
 
@@ -16,7 +16,9 @@ private:
     double m_amount;
     double m_fee;
     std::chrono::system_clock::time_point m_timestamp;
-    static int m_transaction_id;
+    static int m_transaction_id; 
+    // inline static int m_transaction_id = 0; 
+    // C++17 and above, C++14 does not allow this 
 
 public:
 

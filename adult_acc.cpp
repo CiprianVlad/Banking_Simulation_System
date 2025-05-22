@@ -1,6 +1,4 @@
 #include "adult_acc.h"
-#include <iostream>
-#include <chrono>
 #include <iomanip>
 
 // Constructor
