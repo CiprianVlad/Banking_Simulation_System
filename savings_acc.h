@@ -2,6 +2,7 @@
 #define SAVINGS_ACCOUNT_H
 
 #include "account.h" // base class header
+#include "bank.h"
 #include <chrono>
 
 class Savings_Acc : public Account {
@@ -20,7 +21,7 @@ public:
 	void deposit(double amount) override;
 
 	// apply interest to the balance
-	void applyInterest();
+	void afterInterest(Bank& bank);
 
 	// display account details
 	void displayDetails() const override;

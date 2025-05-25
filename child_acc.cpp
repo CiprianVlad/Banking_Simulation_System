@@ -22,11 +22,9 @@ void Child_Acc::deposit(double amount) {
     }
 }
 
-// Apply interest & 
 void Child_Acc::afterInterest(Bank& bank) {
     if (Bank::m_months_passed >= 6 && Bank::m_months_passed % 6 == 0) {
         double interest = bank.applyInterest(*this, Child_Acc::m_interest_rate);
-        Account::balance += interest; // Apply interest
         std::cout << "Interest of $" << std::fixed << std::setprecision(2) << interest
             << " applied to the account with the name: " << getAccHolder() << "\n";
     }

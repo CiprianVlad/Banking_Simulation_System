@@ -1,7 +1,8 @@
 #ifndef ADULT_ACCOUNT_H
 #define ADULT_ACCOUNT_H
 
-#include "account.h" // include the base class header
+#include "account.h" 
+#include "bank.h"
 #include <chrono>
 
 class Adult_Acc : public Account {
@@ -20,7 +21,7 @@ public:
 	void deposit(double amount) override;
 
 	// apply interest to the balance
-	void applyInterest();
+	void afterInterest(Bank& bank);
 
 	// display account details
 	void displayDetails() const override;

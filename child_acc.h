@@ -13,7 +13,7 @@ private:
 	std::chrono::system_clock::time_point m_last_deposit_time; // the last time of deposit 
 public:
 	// Constructor 
-	Child_Acc(const std::string& holder, double initialBalance, double rate = 1.0); 
+	Child_Acc(const std::string& holder, double initialBalance, double rate = 2.0);
 
 	// Destructor
 	~Child_Acc();
