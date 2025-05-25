@@ -1,4 +1,3 @@
-#include <algorithm>
 #include "bank.h"
 #include "account.h"
 
@@ -51,6 +50,18 @@ void Bank::listAllAccounts() const {
         std::cout << "Holder:" << account->getAccHolder() << "\n"
             << "Account Number:" << account->getAccNumber() << "\n"
             << "Balance $:" << account->getBalance() << "\n";
+    }
+}
+
+int Bank::m_months_passed = 0; 
+
+double Bank::applyInterest(Account& account, double rate, int months) {
+
+    if (months % 6 == 0 && months > 5) {
+        double interest = account.getBalance() * (rate / 100.0);
+        account.deposit(interest);
+        std::cout << "Interest applied\n";
+        return interest;
     }
 }
 

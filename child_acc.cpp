@@ -22,21 +22,16 @@ void Child_Acc::deposit(double amount) {
     }
 }
 
-// Calculate and apply interest
-void Child_Acc::applyInterest() {
-    auto now = std::chrono::system_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::seconds>(now - m_last_deposit_time);
-    // Need to test this 
-
-    if (duration.count() >= 6) { // Check if 6 months have passed
-        double interest = balance * (m_interest_rate / 100.0); // Calculate interest
-        balance += interest; // Apply interest
-        m_last_deposit_time = now; // Reset the deposit timestamp
+// Apply interest & 
+void Child_Acc::afterInterest(Bank& bank) {
+    if (Bank::m_months_passed >= 6 && Bank::m_months_passed % 6 == 0) {
+        double interest = bank.applyInterest(*this, Child_Acc::m_interest_rate);
+        Account::balance += interest; // Apply interest
         std::cout << "Interest of $" << std::fixed << std::setprecision(2) << interest
-            << " applied to the account.\n";
+            << " applied to the account with the name: " << getAccHolder() << "\n";
     }
     else {
-        std::cout << "Interest can only be applied after x months.\n";
+        std::cout << (6 - (Bank::m_months_passed % 6)) << " month(s) must pass to apply the interest";
     }
 }
 

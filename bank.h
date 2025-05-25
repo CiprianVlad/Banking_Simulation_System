@@ -4,6 +4,7 @@
 #include <iostream> 
 #include <string>
 #include <vector>
+#include <algorithm>
 
 class Account; // not good practice 
 
@@ -16,6 +17,7 @@ private:
     std::vector<Account*> m_accounts;
 
 public:
+    static int m_months_passed;
 
     Bank(const std::string& bankName, const std::string& bankAddress);
     ~Bank();
@@ -24,6 +26,7 @@ public:
     void addAccount(Account* account);
     void removeAccount(Account* account);
     void listAllAccounts() const;
+    double applyInterest(Account& account, double rate, int months = m_months_passed);
 
     // Getters
     std::string getName() const;
