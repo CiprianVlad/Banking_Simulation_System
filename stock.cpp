@@ -1,6 +1,6 @@
 #include "stock.h"
 
-int Stock::nextId = 1;
+int Stock::nextId = 0; 
 
 // Constructor 
 Stock::Stock(const std::string& name, const std::string& category, double initialIndex, int stocksForSale)
@@ -8,7 +8,7 @@ Stock::Stock(const std::string& name, const std::string& category, double initia
     indexHistory.push_back(initialIndex);
 };
 
-// Getters
+// Getters 
 int Stock::getId() const {
     return id;
 }
@@ -21,7 +21,7 @@ std::string Stock::getCategory() const {
     return category;
 }
 
-double Stock::getCurrentIndex() const {
+double Stock::getCurrentIndex() const{
     return currentIndex;
 }
 
@@ -59,10 +59,8 @@ Stock Stock::operator+(const Stock& other) const {
 
 // Display stock details
 void Stock::displayDetails() const {
-    std::cout << "Stock ID: " << id << "\n";
     std::cout << "Name: " << name << "\n";
     std::cout << "Category: " << category << "\n";
-    // std::cout << "Description: " << description << "\n";
     std::cout << "Current Index: " << currentIndex << "\n";
     std::cout << "Stocks for Sale: " << stocksForSale << "\n";
     std::cout << "Index History: ";

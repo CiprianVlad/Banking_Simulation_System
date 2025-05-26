@@ -1,19 +1,14 @@
-#include <iostream> 
-#include <ctime>
-#include <random>
 #include "account.h"
-
-int Account::accountCount = 0;
+#include "bank.h"
+#include <random>
+#include <chrono>
 
 Account::Account(const std::string& holder, double initialBalance) 
     : account_holder(holder), balance(initialBalance) {
     account_number = generateAccountNumber();
-    accountCount++;
 }
 
-Account::~Account() {
-    accountCount--; 
-}
+Account::~Account() {}
 
 void Account::deposit(double amount) {
     if (amount > 0) {
@@ -54,14 +49,10 @@ double Account::getBalance() const {
     return balance;
 }
 
-int Account::getAccountCount() {
-    return accountCount;
-}
-
-
 // generate number for acc 
 std::string Account::generateAccountNumber() {
-    std::mt19937 rng(static_cast<unsigned int>(time(0))); // Seed the random number generator  
-    std::uniform_int_distribution<int> dist(100000, 999999); // range for the random number 
-    return "RO" + std::to_string(4147) + std::to_string(dist(rng)); // generate acc_number  
+    static std::default_random_engine generator(static_cast<unsigned int>(std::chrono::system_clock::now().time_since_epoch().count())); // Didn't find a simpler way 
+    std::uniform_int_distribution<int> distribution(100000, 999999); // 6-digit number
+    int randomNumber = distribution(generator);
+    return "RO" + std::to_string(4147) + std::to_string(randomNumber);
 }

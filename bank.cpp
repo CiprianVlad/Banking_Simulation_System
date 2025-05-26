@@ -1,12 +1,13 @@
 #include "bank.h"
 #include "account.h"
+#include "stock.h"
 
 Bank::Bank(const std::string& bankName, const std::string& bankAddress)
-    : m_name(bankName), m_address(bankAddress) {
+    : m_name(bankName), m_address(bankAddress), distribution(-0.2, 0.2){
 }
 
 Bank::~Bank() {
-    for (Account* account : m_accounts) { // Looping through m_accounts 
+    for (Account* account : m_accounts) { 
         delete account;
     }
 }
@@ -62,7 +63,21 @@ double Bank::applyInterest(Account& account, double rate, int months) {
         account.deposit(interest);
         std::cout << "Interest applied\n";
         return interest;
+    } else {
+        std::cout << "Interest denied. Wait for the 6th or 12th month of the year.\n";
+        return 0; 
     }
+}
+
+// Randomize stock indices and update balance 
+double Bank::applyStockDifference(Stock& stock){
+    // Randomly change the stock index 
+    double change = stock.getCurrentIndex() * distribution(generator);
+    stock.updateIndex(stock.getCurrentIndex() + change);
+
+    std::cout << "Stock " << stock.getName() << " index updated by " << change
+        << ". New index: " << stock.getCurrentIndex() << "\n";
+    return change;
 }
 
 // Getters 

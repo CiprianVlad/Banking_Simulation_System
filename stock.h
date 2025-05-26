@@ -4,21 +4,21 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <random>
 
 class Stock {
 private:
-	static int nextId; 
-	int id;
+	static int nextId;
+	int id; 
 	std::string name;
 	std::string category; // company category (eg. tech, health)
 	double currentIndex; 
 	int stocksForSale;
-	std::vector<double> indexHistory; // how the index performed in time
-	// could become a graph (child class) for future implementations
+	std::vector<double> indexHistory;
 
 public:
-	// Overload pe operatorul de afisare 
-	friend std::ostream& operator<<(std::ostream& os, const Stock& stock); // overload pe << 
+	// Overload pe <<  
+	friend std::ostream& operator<<(std::ostream& os, const Stock& stock); 
 
 	// Overload pe operatorul + 
 	Stock operator+(const Stock& other) const; 
@@ -30,7 +30,6 @@ public:
 	int getId() const;
 	std::string getName() const;
 	std::string getCategory() const;
-	// std::string getDescription() const; // a possibility
 	double getCurrentIndex() const;
 	int getStocksForSale() const;
 	const std::vector<double>& getIndexHistory() const;

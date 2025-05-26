@@ -13,7 +13,6 @@ protected:
     std::string account_holder;
 
     double balance;
-    static int accountCount; // numarul de conturi create 
     std::string generateAccountNumber();
 
 public:

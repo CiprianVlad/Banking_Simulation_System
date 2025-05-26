@@ -3,20 +3,15 @@
 
 #include "account.h"
 #include "stock.h"
-#include <vector>
-#include <chrono>
-#include <random>
+#include "bank.h"
 
 class Invest_acc : public Account {
 private:
-	std::vector<Stock> stocks; // list of stocks 
-	std::chrono::system_clock::time_point m_last_deposit_time; // the last time of deposit 
-	std::default_random_engine generator; // with how much is modified the stock 
-	std::uniform_real_distribution<double> distribution; // the distribution of the random changes 
-
+	std::vector<Stock> stocks;
+	std::vector<int> heldStocks;
 public:
 	// Constructor 
-	Invest_acc(const std::string& holder, double initialBalance, const std::vector<Stock>& initialStocks);
+	Invest_acc(const std::string& holder, double initialBalance, std::vector<Stock>& initialStocks);
 
 	// Destructor
 	~Invest_acc();
@@ -24,12 +19,14 @@ public:
 	// override deposit to track the timestamp
 	void deposit(double amount) override;
 
-	// apply interest to the balance
-	void applyStockDifference();
+	void updateStocks(Bank& bank);
 
-	// display account details
-	void displayDetails() const override; 
+	// Getters 
+	std::vector<Stock>& getSelectedStocks();
+	std::vector<int>& getHeldStocks();
 
+	// allow the user to invest a specific amount
+	bool investInStocks(std::vector<int> stockVecIndex, double& amount);
 
 };
 #endif 
