@@ -8,7 +8,7 @@ Child_Acc::Child_Acc(const std::string& holder, double initialBalance, double ra
 
 // Destructor
 Child_Acc::~Child_Acc() {
-    // Destructor
+ 
 }
 
 // Override deposit to update the timestamp

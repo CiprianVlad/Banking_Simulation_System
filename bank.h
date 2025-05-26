@@ -26,7 +26,7 @@ public:
     void addAccount(Account* account);
     void removeAccount(Account* account);
     void listAllAccounts() const;
-    double applyInterest(Account& account, double rate, int months = m_months_passed);
+    double applyInterest(Account& account, double rate, int months = m_months_passed); // months_passed updates in main 
 
     // Getters
     std::string getName() const;

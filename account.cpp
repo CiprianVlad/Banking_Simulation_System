@@ -18,18 +18,18 @@ Account::~Account() {
 void Account::deposit(double amount) {
     if (amount > 0) {
         balance += amount;
-        std::cout << " Deposited $" << amount << " to account " << account_number << "\n";
+        std::cout << " Deposited $ " << amount << " to account " << account_number << "\n";
     }
 }
 
 bool Account::withdraw(double amount) {
     if (balance >= amount) {
         balance -= amount;
-        std::cout << " Withdrawn $" << amount << " from account " << account_number << "\n";
+        std::cout << " Withdrawn $ " << amount << " from account " << account_number << "\n";
         return true;
     }
     else {
-        std::cout << "Not enough money in" << account_number;
+        std::cout << " Not enough money in " << account_number;
         return false;
     }
 }

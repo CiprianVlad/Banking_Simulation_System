@@ -29,7 +29,7 @@ int main() {
     for (int i = 1; i <= 6; ++i) {
         Bank::m_months_passed++;
         investAccount.applyStockDifference();
-        investAccount.displayDetails();
+        std::cout << stock2 << "\n" << stock3 << "\n";
         if (i % 6 == 0) { // apply interest every 6 months 
             child_acc1.afterInterest(bank);
         }

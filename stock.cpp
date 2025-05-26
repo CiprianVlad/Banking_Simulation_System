@@ -20,11 +20,7 @@ std::string Stock::getName() const {
 std::string Stock::getCategory() const {
     return category;
 }
-/*
-std::string Stock::getDescription() const {
-    return description;
-}
-*/
+
 double Stock::getCurrentIndex() const {
     return currentIndex;
 }
@@ -45,6 +41,20 @@ void Stock::updateIndex(double newIndex) {
 
 void Stock::setStocksForSale(int newStocksForSale) {
     stocksForSale = newStocksForSale;
+}
+// Operatorul << 
+std::ostream& operator<<(std::ostream& os, const Stock& stock) {
+    os << " Stock: " << stock.getName() << ", Category: " << stock.getCategory()
+        << ", Index: " << stock.getCurrentIndex() << ", For Sale: " << stock.getStocksForSale();
+    return os;
+}
+// Operatorul + 
+Stock Stock::operator+(const Stock& other) const {
+    if (name == other.name && category == other.category) {
+        return Stock(name, category, currentIndex, stocksForSale);
+    } 
+    // return copy 
+    return *this; 
 }
 
 // Display stock details
